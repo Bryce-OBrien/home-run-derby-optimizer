@@ -33,13 +33,13 @@ BUDGET_CAP = 163
 st.title("2025 Home Run Derby Optimizer")
 st.markdown("""
 ### Competition Rules:
-- Draft **8 MLB players** under a **163-point budget** (based on 2024 HR totals)
-- Each month, **only the top 7 HR hitters** from your team count
+- Draft **8 MLB players** from the list below under a **163-point budget** (based on 2024 HR totals)
+- Each month, **only the top 7 of 8 HR hitters** from your team count
 - You can customize 2025 HR projections and run one of two optimizers:
     - **Balanced Optimizer**: Maximizes projected HRs across all 8 players (safe, well-rounded)
     - **Top-Heavy Optimizer**: Maximizes the top 7 of 8 scorers (focuses on ceiling, allows one weak backup)
 
-📊 *P2025 HR Projection data is based on 'The Bat' & 'The Bat X' by Derek Carty.*
+📊 *2025 HR Projection data is based on 'The Bat' & 'The Bat X' by Derek Carty.*
 """)
 
 # ---------- Load and Display Editable Table ----------
@@ -49,7 +49,7 @@ st.subheader("Edit 2025 HR Projections")
 def load_default_data():
     df = pd.read_csv(DEFAULT_DATA_PATH)
     df = df.rename(columns={
-        "2024_rank": "2024 Rank",
+        "2024_rank": "2024 HR Rank",
         "player_name": "Name",
         "team": "Team",
         "cost_to_draft": "Cost to Draft (2024 HR Total)",
