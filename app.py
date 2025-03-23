@@ -39,7 +39,7 @@ st.markdown("""
     - **Balanced Optimizer**: Maximizes projected HRs across all 8 players (safe, well-rounded)
     - **Top-Heavy Optimizer**: Maximizes the top 7 of 8 scorers (focuses on ceiling, allows one weak backup)
 
-📊 *Projection data was downloaded from Fangraphs and is based on The Bat & The Bat X by Derek Carty.*
+📊 *P2025 HR Projection data is based on 'The Bat' & 'The Bat X' by Derek Carty.*
 """)
 
 # ---------- Load and Display Editable Table ----------
@@ -90,7 +90,7 @@ if run_balanced:
             st.error("❌ Optimization failed. Please check your input data.")
         else:
             st.success("✅ Optimization complete!")
-            st.subheader("Balanced Optimized Team (All 8 HRs Count)")
+            st.subheader("Balanced Optimized Team (Highest HR total for all 8 Players.)")
             st.dataframe(df_team.rename(columns={
                 "player_name": "Name",
                 "team": "Team",
@@ -134,4 +134,4 @@ if run_top_heavy:
             st.markdown(f"**Projected Total HRs (Top 7 of 8):** {total_hr_projection}")
 
 st.divider()
-st.markdown("Built with 🍺 using [Streamlit](https://streamlit.io/) and PuLP.")
+st.markdown("Built with 🍺 using [Streamlit](https://streamlit.io/) and [PuLP.](https://pypi.org/project/PuLP/)")
